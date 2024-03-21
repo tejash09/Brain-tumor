@@ -4,64 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-<style>
-/* Reset margin and padding for all elements */
-* {
+    <style>
+        * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply a font family for the body */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding-top: 70px; /* Adjust for header height */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Header and navigation styling */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #333;
-    padding: 10px 0;
-    color: #fff;
-    z-index: 1000;
+    background-color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-nav .logo {
+.logo {
+    font-size: 1.5rem;
     font-weight: bold;
-    text-transform: uppercase;
+    color: #fff;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
+    list-style: none;
 }
 
 nav ul li {
-    padding: 0 10px;
+    margin-left: 1rem;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #fff;
+    padding: 0.5rem;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #007bff;
+    color: #1abc9c;
 }
 
-/* Team section styling */
+
 .team {
     max-width: 1200px;
     margin: 0 auto;
@@ -83,6 +80,7 @@ nav ul li a:hover {
     width: calc(20% - 30px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    border: 1px solid black; 
 }
 
 .person:hover {
@@ -107,7 +105,7 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1024px) {
     .person {
         width: calc(33.333% - 30px);
@@ -125,7 +123,7 @@ nav ul li a:hover {
         width: 100%;
     }
 }
-</style>
+    </style>
 </head>
 <header>
     <nav>
@@ -146,7 +144,7 @@ nav ul li a:hover {
            
             <h3>Tejas</h3>
             <p>Role: Team Leader</p>
-            <p>Email: tejasreddymalla@gmail.com</p>
+            <p>Email: reddymalla@gmail.com</p>
         </div>
         <div class="person">
             
@@ -156,14 +154,14 @@ nav ul li a:hover {
         </div>
         <div class="person">
            
-            <h3>vignesh</h3>
+            <h3>Vignesh</h3>
             <p>Role: Front end developer</p>
             <p>Email: vignesh770@gmail.com</p>
         </div>
         <div class="person">
             
             <h3>Sriraj</h3>
-            <p>Role: resource manager</p>
+            <p>Role: Resource manager</p>
             <p>Email: srirajrockss@gmail.com</p>
         </div>
         <div class="person">
