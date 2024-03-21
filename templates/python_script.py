@@ -5,17 +5,13 @@ import plotly.subplots as subplots
 from skimage import measure
 import nibabel as nib
 import os
-# Read patient ID from command-line arguments
 patient_id = sys.argv[1]
 
-# Define the base path for the data
 base_path = "C:\\Users\\reddy\\Downloads\\BraTS2020_TrainingData\\MICCAI_BraTS2020_TrainingData\\"
 
-# Update the brain_path and seg_path variables using the patient ID
 brain_path = f"{base_path}BraTS20_Training_{patient_id}\\BraTS20_Training_{patient_id}_flair.nii"
 seg_path = f"{base_path}BraTS20_Training_{patient_id}\\BraTS20_Training_{patient_id}_seg.nii"
 
-# Load the image data
 im = nib.load(brain_path).get_fdata()
 seg = nib.load(seg_path).get_fdata()
 

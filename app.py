@@ -14,7 +14,6 @@ import requests
 import nibabel as nib
 import plotly.express as px
 from flask import Flask,request,render_template,jsonify
-import SimpleITK as sitk
 
 app = Flask(__name__,template_folder='templates')
 
