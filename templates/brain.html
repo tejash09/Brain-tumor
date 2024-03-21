@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Tumor Detection</title>
+  <style>
+    
+/* Reset and basic styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header and navigation */
+header {
+  background-color: #2c3e50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Hero section */
+.hero {
+  background-color: #1abc9c;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2c3e50;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #34495e;
+}
+
+/* Features section */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+  max-width: 300px;
+}
+
+.feature img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Upload section */
+.upload {
+  background-color: #f8f9fa;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.upload h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.file-label {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.file-label:hover {
+  background-color: #34495e;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content ul {
+  display: flex;
+  list-style: none;
+}
+
+/* Contact form */
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact input,
+  .contact textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact textarea {
+    height: 150px;
+  }
+  .contact-info {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin-bottom: 0.5rem;
+  }
+  
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Brain Tumor Detection</div>
+      <ul>
+        <li><a href="{{ url_for('brain') }}">Home</a></li>
+        <li><a href="{{ url_for('upload') }}">Upload Images</a></li>
+        <li><a href="{{ url_for('patients') }}">Patients</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('c') }}">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Detect Brain Tumors Accurately</h1>
+        <p>Our advanced technology helps detect brain tumors from X-ray, MRI, and 3D images.</p>
+        <a href="upload.html" class="btn">Upload Images</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <img src="data:image/jpeg;base64,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" alt="Feature Icon">
+        <h3>Accurate Detection</h3>
+        <p>Our state-of-the-art algorithms ensure highly accurate tumor detection.</p>
+      </div>
+      
+    </section>
+
+   
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 Brain Tumor Detection. All rights reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  
+</body>
+</html>

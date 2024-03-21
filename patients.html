@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!-- Patient 1 Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card" data-patient-id="1">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Patient Image">
+                <div class="card-body">
+                    <h5 class="card-title">Patient 1</h5>
+                    <p class="card-text">Click to run analysis for Patient 1.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Patient 5 Card -->
+        <div class="col-md-4 mb-3">
+            <div class="card" data-patient-id="5">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Patient Image">
+                <div class="card-body">
+                    <h5 class="card-title">Patient 5</h5>
+                    <p class="card-text">Click to run analysis for Patient 5.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.card').click(function() {
+        var patientId = $(this).data('patient-id');
+        runPythonFile(patientId);
+    });
+});
+
+function runPythonFile(patientId) {
+    console.log('Function called with patient ID:', patientId);
+    $.ajax({
+        url: '/run-python/' + patientId,
+        method: 'GET',
+        success: function(response) {
+            alert('Python file executed for Patient ' + patientId);
+            window.location.href = '/results/brain_tumor_visualization_patient_' + patientId + '.html';
+        },
+        error: function(error) {
+            alert('Error executing Python file for Patient ' + patientId);
+        }
+    });
+}
+</script>
+</body>
+</html>

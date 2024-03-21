@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+<style>
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a font family for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 70px; /* Adjust for header height */
+}
+
+/* Header and navigation styling */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Team section styling */
+.team {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.team h2 {
+    margin-bottom: 30px;
+}
+
+.person {
+    background: #fff;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(20% - 30px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.person:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.person img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.person h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+.person p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .person {
+        width: calc(33.333% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .person {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 480px) {
+    .person {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<header>
+    <nav>
+      <div class="logo">Brain Tumor Detection</div>
+      <ul>
+        <li><a href="{{ url_for('brain') }}">Home</a></li>
+        <li><a href="{{ url_for('upload') }}">Upload Images</a></li>
+        <li><a href="{{ url_for('patients') }}">Patients</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('c') }}">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+    <section class="team">
+        <h2>Our Team</h2>
+        <div class="person">
+           
+            <h3>Tejas</h3>
+            <p>Role: Team Leader</p>
+            <p>Email: tejasreddymalla@gmail.com</p>
+        </div>
+        <div class="person">
+            
+            <h3>Yashwanth</h3>
+            <p>Role: Back end developer</p>
+            <p>Email: yasha@gmail.com</p>
+        </div>
+        <div class="person">
+           
+            <h3>vignesh</h3>
+            <p>Role: Front end developer</p>
+            <p>Email: vignesh770@gmail.com</p>
+        </div>
+        <div class="person">
+            
+            <h3>Sriraj</h3>
+            <p>Role: resource manager</p>
+            <p>Email: srirajrockss@gmail.com</p>
+        </div>
+        <div class="person">
+            <h3>Nitish Kumar</h3>
+            <p>Role: Back end developer</p>
+            <p>Email: nitishkumar@gmail.com</p>
+        </div>
+    </section>
+</body>
+</html>
