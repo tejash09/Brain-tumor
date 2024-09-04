@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 import plotly.subplots as subplots
 from skimage import measure
 from skimage import measure
-from skimage.draw import ellipsoid
+#from skimage.draw import ellipsoid
 import webbrowser
 import os
 import nilearn as nl
@@ -16,6 +16,7 @@ import plotly.express as px
 from flask import Flask,request,render_template,jsonify
 
 app = Flask(__name__,template_folder='templates')
+
 
 @app.route('/')
 def brain():
