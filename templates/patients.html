@@ -268,8 +268,8 @@ footer {
 
     <script>
       function runPythonFile(patientId) {
-        var brain_path = "C:\\Users\\reddy\\Downloads\\BraTS2020_TrainingData\\MICCAI_BraTS2020_TrainingData\\BraTS20_Training_" + patientId + "\\BraTS20_Training_" + patientId + "_flair.nii";
-        var seg_path = "C:\\Users\\reddy\\Downloads\\BraTS2020_TrainingData\\MICCAI_BraTS2020_TrainingData\\BraTS20_Training_" + patientId + "\\BraTS20_Training_" + patientId + "_seg.nii";
+        var brain_path = "sampledata\\"+patientId+"\\"+patientId+"_flair.nii";
+        var seg_path = "sampledata\\"+patientId+"\\"+patientId+"_seg.nii";
         $.ajax({
             url: '/receive_data',
             type: 'POST',
