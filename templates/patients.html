@@ -220,129 +220,61 @@ footer {
     margin-bottom: 0.5rem;
   }
   
+  .card { transition: transform 0.3s; }
+  .card:hover { transform: scale(1.05); }
 
     </style>
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="logo">Brain Tumor Detection</div>
-        <ul>
-          <li><a href="{{ url_for('brain') }}">Home</a></li>
-          <li><a href="{{ url_for('upload') }}">Upload Images</a></li>
-          <li><a href="{{ url_for('patients') }}">Patients</a></li>
-          <li><a href="{{ url_for('about') }}">About</a></li>
-          <li><a href="{{ url_for('c') }}">Contact us</a></li>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('brain') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('upload') }}">Upload Images</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('patients') }}">Patients</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('c') }}">Contact us</a></li>
         </ul>
       </nav>
     </header>
     <div class="container mt-5">
       <div class="row">
+        {% for i in range(1, 256) %}
         <div class="col-md-4 mb-3">
           <div
             class="card"
             style="cursor: pointer"
-            onclick="runPythonFile('001')"
-            data-patient-id="1"
+            onclick="runPythonFile('{{ '%03d' % i }}')"
+            data-patient-id="{{ i }}"
           >
             <img
-              src="https://via.placeholder.com/150"
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22150%22%20height%3D%22150%22%20viewBox%3D%220%200%20150%20150%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1234567890a%20text%20%7B%20fill%3A%23999%3Bfont-weight%3Anormal%3Bfont-family%3A-apple-system%2CBlinkMacSystemFont%2C%26quot%3BSegoe%20UI%26quot%3B%2CRoboto%2C%26quot%3BHelvetica%20Neue%26quot%3B%2CArial%2C%26quot%3BNoto%20Sans%26quot%3B%2Csans-serif%2C%26quot%3BApple%20Color%20Emoji%26quot%3B%2C%26quot%3BSegoe%20UI%20Emoji%26quot%3B%2C%26quot%3BSegoe%20UI%20Symbol%26quot%3B%2C%26quot%3BNoto%20Color%20Emoji%26quot%3B%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1234567890a%22%3E%3Crect%20width%3D%22150%22%20height%3D%22150%22%20fill%3D%22%23373940%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2256.1953125%22%20y%3D%2280.1%22%3EPatient%20{{ i }}%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
               class="card-img-top"
-              alt="Patient Image"
+              alt="Patient {{ i }} Image"
             />
             <div class="card-body">
-              <h5 class="card-title">Patient 1</h5>
-              <p class="card-text">Click to run analysis for Patient 1.</p>
+              <h5 class="card-title">Patient {{ i }}</h5>
+              <p class="card-text">Click to run analysis for Patient {{ i }}.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <div
-            class="card"
-            style="cursor: pointer"
-            onclick="runPythonFile('002')"
-            data-patient-id="2"
-          >
-            <img
-              src="https://via.placeholder.com/150"
-              class="card-img-top"
-              alt="Patient Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Patient 2</h5>
-              <p class="card-text">Click to run analysis for Patient 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div
-            class="card"
-            style="cursor: pointer"
-            onclick="runPythonFile('003')"
-            data-patient-id="3"
-          >
-            <img
-              src="https://via.placeholder.com/150"
-              class="card-img-top"
-              alt="Patient Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Patient 3</h5>
-              <p class="card-text">Click to run analysis for Patient 3.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div
-            class="card"
-            style="cursor: pointer"
-            onclick="runPythonFile('004')"
-            data-patient-id="4"
-          >
-            <img
-              src="https://via.placeholder.com/150"
-              class="card-img-top"
-              alt="Patient Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Patient 4</h5>
-              <p class="card-text">Click to run analysis for Patient 4.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div
-            class="card"
-            style="cursor: pointer"
-            onclick="runPythonFile('005')"
-            data-patient-id="5"
-          >
-            <img
-              src="https://via.placeholder.com/150"
-              class="card-img-top"
-              alt="Patient Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Patient 5</h5>
-              <p class="card-text">Click to run analysis for Patient 5.</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      function runPythonFile(patientId)
-      {
+      function runPythonFile(patientId) {
         var brain_path = "C:\\Users\\reddy\\Downloads\\BraTS2020_TrainingData\\MICCAI_BraTS2020_TrainingData\\BraTS20_Training_" + patientId + "\\BraTS20_Training_" + patientId + "_flair.nii";
         var seg_path = "C:\\Users\\reddy\\Downloads\\BraTS2020_TrainingData\\MICCAI_BraTS2020_TrainingData\\BraTS20_Training_" + patientId + "\\BraTS20_Training_" + patientId + "_seg.nii";
         $.ajax({
-            url : '/receive_data',
-            type : 'POST',
-            contentType : 'application/json',
-            data : JSON.stringify({'brain_path' : brain_path,'seg_path' : seg_path}),
+            url: '/receive_data',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({'brain_path': brain_path, 'seg_path': seg_path}),
             success: function(response) {
               console.log('Data sent successfully');
               console.log(response);
