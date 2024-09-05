@@ -68,12 +68,12 @@ This cutting-edge project implements a 3D semantic segmentation system for detec
 
 ## 📊 Output Examples
 
-[Space for GIF showing the 3D brain rotation]
+![](https://github.com/tejash09/Brain-tumor/blob/main/img/test_gif_BraTS20_Training_001_flair.gif)
 
-[Space for image of multi-slice view]
-
-[Space for image of color-coded segmentation]
-
+![](https://github.com/tejash09/Brain-tumor/blob/main/img/newplot.png)
+![](https://github.com/tejash09/Brain-tumor/blob/main/img/slice.png)
+![](https://github.com/tejash09/Brain-tumor/blob/main/img/hemisperical%20view.png)
+![](https://github.com/tejash09/Brain-tumor/blob/main/img/Figure_1.png)
 ## 🤝 Contributing
 
 We welcome contributions to this project! Please fork the repository and submit a pull request with your innovative changes.
