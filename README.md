@@ -44,12 +44,12 @@ This cutting-edge project implements a 3D semantic segmentation system for detec
 
 1. Start the Flask server:
    ```
-   python app.py
+   python app1.py
    ```
 
 2. Open a web browser and navigate to `http://localhost:5000`
 
-3. Use the intuitive web interface to upload MRI scans and view the results
+3. Use the intuitive web interface to select a Patient from the Patients Page
 
 ## 📁 File Structure
 
