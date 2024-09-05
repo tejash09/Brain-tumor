@@ -1,4 +1,3 @@
-Here's a refined version of the project description for your Brain Tumor Detection and Visualization system, tailored for a hackathon submission:
 
 # 🧠 Brain Tumor Detection and Visualization 🖥️
 
